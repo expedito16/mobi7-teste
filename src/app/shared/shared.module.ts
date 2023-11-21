@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    VehicleListComponent
   ],
   imports: [
     CommonModule
@@ -19,7 +21,8 @@ import { SearchComponent } from './search/search.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    VehicleListComponent
   ]
 })
 export class SharedModule { }
