@@ -1,8 +1,11 @@
 @import './config-scss/reset.scss';
 
 .container {
-  max-width: 600px;
+  max-width: 800px;
   box-sizing: border-box;
   padding: 0 20px;
   margin: 0 auto;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

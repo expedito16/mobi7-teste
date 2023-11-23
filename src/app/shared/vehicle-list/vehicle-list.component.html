@@ -1,5 +1,54 @@
-<section class="container-search">
+<!-- <section class="container-search">
   <app-search></app-search>
+</section> -->
+
+<section class="title">
+  <h1>Lista de Veículos</h1>
 </section>
 
-<p>vehicle-list works!</p>
+<table cdk-table [dataSource]="dataSource">
+  <!-- Id Column -->
+  <ng-container cdkColumnDef="id">
+    <th cdk-header-cell *cdkHeaderCellDef> Id </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+
+  <!-- Placa Column -->
+  <ng-container cdkColumnDef="placa">
+    <th cdk-header-cell *cdkHeaderCellDef> Placa </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.placa }} </td>
+  </ng-container>
+
+  <!-- Data Column -->
+  <ng-container cdkColumnDef="data">
+    <th cdk-header-cell *cdkHeaderCellDef> Data </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.data | date : 'dd/MM/yyyy HH:mm' }} </td>
+  </ng-container>
+
+  <!-- Velocidade Column -->
+  <ng-container cdkColumnDef="velocidade">
+    <th cdk-header-cell *cdkHeaderCellDef> Velocidade </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.velocidade }} Km/H </td>
+  </ng-container>
+
+    <!-- Latitude Column -->
+    <ng-container cdkColumnDef="latitude">
+      <th cdk-header-cell *cdkHeaderCellDef> Latitude </th>
+      <td cdk-cell *cdkCellDef="let element"> {{ element.latitude }} </td>
+    </ng-container>
+
+      <!-- Longitude Column -->
+  <ng-container cdkColumnDef="longitude">
+    <th cdk-header-cell *cdkHeaderCellDef> Longitude </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.longitude }} </td>
+  </ng-container>
+
+    <!-- Ignicao Column -->
+    <ng-container cdkColumnDef="ignicao">
+      <th cdk-header-cell *cdkHeaderCellDef> Ignição </th>
+      <td cdk-cell *cdkCellDef="let element"> {{ element.ignicao }} </td>
+    </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>
